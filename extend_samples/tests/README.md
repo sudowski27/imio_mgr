@@ -1,0 +1,27 @@
+## Opis testów
+
+- test_0.py  : funkcja split_csv_object_by_device
+- test_1.py  : funkcja get_device_number
+- test_2.py  : funkcja get_config_for_csv
+- test_3.py  : funkcja get_config_for_device
+- test_4.py  : funkcja get_carrier_mobility
+- test_5.py  : funkcja arguments_unpack
+- test_6.py  : funkcja mosfet_saturation_region_function
+- test_7.py  : funkcja mosfet_linear_region_function
+- test_8.py  : funkcja mosfet_function
+- test_9.py  : funkcja get_gate_to_source_voltage_array
+- test_10.py : funkcja get_drain_to_source_voltage_array
+- test_11.py : funkcja get_channel_width_array
+- test_12.py : funkcja get_arguments_tuple
+- test_13.py : funkcja get_drain_current_array
+- test_14.py : funkcja get_coeffs_for_current_device
+- test_15.py : funkcja get_channel_width_for_csv
+- test_16.py : funkcja get_pdf_pages
+- test_17.py : funkcja get_plot_for_pdf
+- test_18.py : funkcja get_new_created_device_data_frame
+- test_19.py : funkcja change_dataframe_device_number
+- test_20.py : funkcja generate_new_device_dataframes
+- test_21.py : funkcja concatenate_device_dataframes
+- test_22.py : funkcja get_csv_filename
+- test_23.py : funkcja join_channel_width_to_device_dataframe
+- test_24.py : funkcja get_dataframe_with_headers
