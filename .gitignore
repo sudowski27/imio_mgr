@@ -1,0 +1,3 @@
+extend_samples/.coverage
+extend_samples/src/__pycache__/
+extend_samples/tests/__pycache__/
