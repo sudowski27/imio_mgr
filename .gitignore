@@ -1,3 +1,8 @@
 extend_samples/.coverage
 extend_samples/src/__pycache__/
 extend_samples/tests/__pycache__/
+variational_autoencoder/src/__pycache__/
+variational_autoencoder/__pycache__/
+variational_autoencoder/.coverage
+variational_autoencoder/tests/__pycache__/
+variational_autoencoder/tests/helpers/__pycache__/
