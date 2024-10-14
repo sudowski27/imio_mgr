@@ -1,7 +1,8 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 import json
 import random
 import string
+from .create_configure_dict import create_configure_dict
 
 
 def create_json_configure_file(filename: str, is_json_syntax_good=True) -> dict:
@@ -18,11 +19,7 @@ def create_json_configure_file(filename: str, is_json_syntax_good=True) -> dict:
     -------
     dict
     """
-    configure_dict = {
-        "train_dataset_file": "../mos_ref_data/nmos_130nm_gaussian_l_vth_rds_50_devs_into_subth.csv",
-        "test_dataset_file": "../mos_ref_data/nmos_130nm_gaussian_l_vth_rds_100_devs_into_subth_VALIDATION.csv",
-        "trained_vae_file_name": "../pytorch_vaes/vae_nmos_130nm_trained_on_50_devs.pt"
-    }
+    configure_dict = create_configure_dict()
 
     json_string = json.dumps(configure_dict, indent=4)
 
