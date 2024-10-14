@@ -6,3 +6,5 @@ variational_autoencoder/__pycache__/
 variational_autoencoder/.coverage
 variational_autoencoder/tests/__pycache__/
 variational_autoencoder/tests/helpers/__pycache__/
+variational_autoencoder/.flake8
+variational_autoencoder/.pylintrc
