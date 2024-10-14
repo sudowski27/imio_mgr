@@ -1,5 +1,0 @@
-{
-    "train_dataset_file": "../mos_ref_data/nmos_130nm_gaussian_l_vth_rds_50_devs_into_subth.csv",
-    "test_dataset_file": "../mos_ref_data/nmos_130nm_gaussian_l_vth_rds_100_devs_into_subth_VALIDATION.csv",
-    "trained_vae_file_name": "../pytorch_vaes/vae_nmos_130nm_trained_on_50_devs.pt"
-}SUYQqFepNhq8w3Ji8di8
