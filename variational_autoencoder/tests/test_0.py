@@ -1,7 +1,8 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 import pytest
 from variational_autoencoder.src.load_configuration import load_configuration
 from .helpers.create_json_configure_file import create_json_configure_file
+from .helpers.remove_file import remove_file
 
 
 def test_0():
@@ -17,6 +18,7 @@ def test_0():
         configure_filename
     )
     assert test_result == expected_config
+    remove_file(configure_filename)
 
 
 def test_1():
@@ -35,3 +37,4 @@ def test_1():
         load_configuration(
             configure_filename
         )
+    remove_file(configure_filename)
