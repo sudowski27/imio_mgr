@@ -1,4 +1,4 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 from variational_autoencoder.src.configuration_keys import configuration_keys
 
 
@@ -71,7 +71,7 @@ def create_configure_dict(**kwargs) -> dict:  # pylint: disable=R0912, R0915
 
     if "trained_vae_file_name_key" in kwargs:
         if kwargs["trained_vae_file_name_key"]:
-            good_configure_dict.pop(configuration_keys.trained_vae_file_name, None)
+            bad_configure_dict.pop(configuration_keys.trained_vae_file_name, None)
 
     if "trained_vae_file_name_value" in kwargs:
         if kwargs["trained_vae_file_name_value"]:
