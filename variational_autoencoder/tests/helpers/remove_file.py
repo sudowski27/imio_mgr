@@ -1,5 +1,6 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 import os
+import time
 
 
 def remove_file(filename: str) -> None:
@@ -11,3 +12,5 @@ def remove_file(filename: str) -> None:
     filename: str
     """
     os.remove(filename)
+    while os.path.exists(filename):
+        time.sleep(0.001)
