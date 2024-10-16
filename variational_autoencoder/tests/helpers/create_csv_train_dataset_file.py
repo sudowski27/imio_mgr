@@ -5,7 +5,7 @@ import pandas as pd
 
 
 @dataclass
-class CreateXmlTrainDatasetFileArguments:
+class CreateCsvTrainDatasetFileArguments:
     """
     Parameters
     ----------
@@ -24,9 +24,9 @@ class CreateXmlTrainDatasetFileArguments:
     device_width_separated: bool
 
 
-def create_xml_train_dataset_file(args: CreateXmlTrainDatasetFileArguments) -> pd.DataFrame:
+def create_csv_train_dataset_file(args: CreateCsvTrainDatasetFileArguments) -> pd.DataFrame:
     """
-    Create xml file with data from dataset.
+    Create csv file with data from dataset.
     width_dim, v_gs_dim, v_ds_dim are number of combinations per device of values.
     device_width_separated is boolen value, and if is true, new value of width will
     be seperated by diffrent device for example:
@@ -37,7 +37,7 @@ def create_xml_train_dataset_file(args: CreateXmlTrainDatasetFileArguments) -> p
 
     Parameters
     ----------
-    args: CreateXmlTrainDatasetFileArguments
+    args: CreateCsvTrainDatasetFileArguments
     """
     if args.device_width_separated:
         dataframe = create_train_dataset_dataframe_device_width_seperated(
