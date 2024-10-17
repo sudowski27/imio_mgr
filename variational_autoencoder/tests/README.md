@@ -16,3 +16,4 @@
 - test_13.py : funkcja is_devices_seperated
 - test_14.py : funkcja connect_devices
 - test_15.py : funkcja get_first_device
+- test_16.py : funkcja dataframe_together
