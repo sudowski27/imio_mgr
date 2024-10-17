@@ -1,4 +1,4 @@
-"""version 0.1.1"""
+"""version 0.1.2"""
 from .configuration_keys import configuration_keys
 from .configuration_values import configuration_values
 
@@ -160,6 +160,32 @@ def validate_batch_size(configuration: dict) -> None:
             )
 
 
+def validate_epochs(configuration: dict) -> None:
+    """
+    Function validate epochs part of configuration
+
+    Parameters
+    ----------
+    configuration: dict
+
+    Raises
+    ------
+    ValueError
+        Error if epochs key missing or
+        value type is diffrent than expected
+    """
+    if configuration.get(configuration_keys.epochs) is not None:
+        if not isinstance(configuration[configuration_keys.epochs],
+                          configuration_values.epochs):
+            raise ValueError(
+                f"Value: {configuration_keys.epochs} is not {configuration_values.epochs}"
+            )
+    else:
+        raise ValueError(
+                f"Missing {configuration_keys.epochs} key"
+            )
+
+
 def validate_learning_rate(configuration: dict) -> None:
     """
     Function validate learning_rate part of configuration
@@ -258,6 +284,7 @@ def validate_configuration(configuration: dict) -> None:
     validate_synth_data_folder(configuration)
     validate_synth_data_file_name_core(configuration)
     validate_batch_size(configuration)
+    validate_epochs(configuration)
     validate_learning_rate(configuration)
     validate_wkl(configuration)
     validate_device(configuration)
