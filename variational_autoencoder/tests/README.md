@@ -17,4 +17,5 @@
 - test_14.py : funkcja connect_devices
 - test_15.py : funkcja get_first_device
 - test_16.py : funkcja dataframe_together
-- test_17.py : funkcja count_unique_gate_drain_voltages
+- test_17.py : funkcja count_unique_gate_source_voltages
+- test_18.py : funkcja count_unique_drain_source_voltages
