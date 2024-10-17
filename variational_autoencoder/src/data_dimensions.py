@@ -1,4 +1,4 @@
-"""version 0.1.6"""
+"""version 0.1.7"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -9,7 +9,8 @@ from .const_values import (
     CHANNEL_WIDTH_DTYPE,
     VOLTAGE_CURRENT_D_TYPE,
     DEVICE_MINIMUM_VALUE,
-    GETE_DRAIN_VOLAGE_INDEX
+    GATE_SOURCE_VOLAGE_INDEX,
+    DRAIN_SOURCE_VOLTAGE_INDEX
 )
 
 
@@ -144,9 +145,9 @@ def count_unique_channel_lengths(dataframe: pd.DataFrame) -> int:
     return dataframe[CHANNEL_WIDTH_INDEX].nunique()
 
 
-def count_unique_gate_drain_voltages(dataframe: pd.DataFrame) -> int:
+def count_unique_gate_source_voltages(dataframe: pd.DataFrame) -> int:
     """
-    Count number of unique gate drain voltage values
+    Count number of unique gate source voltage values
 
     Parameters
     ----------
@@ -156,4 +157,19 @@ def count_unique_gate_drain_voltages(dataframe: pd.DataFrame) -> int:
     -------
     int
     """
-    return dataframe[GETE_DRAIN_VOLAGE_INDEX].nunique()
+    return dataframe[GATE_SOURCE_VOLAGE_INDEX].nunique()
+
+
+def count_unique_drain_source_voltages(dataframe: pd.DataFrame) -> int:
+    """
+    Count number of unique drain source voltage values
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame
+
+    Returns
+    -------
+    int
+    """
+    return dataframe[DRAIN_SOURCE_VOLTAGE_INDEX].nunique()
