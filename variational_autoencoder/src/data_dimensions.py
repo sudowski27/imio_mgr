@@ -1,4 +1,4 @@
-"""version 0.1.4"""
+"""version 0.1.5"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -126,3 +126,18 @@ def get_first_device(dataframe: pd.DataFrame) -> pd.DataFrame:
     pd.DataFrame
     """
     return dataframe[dataframe[DEVICE_INDEX] == DEVICE_MINIMUM_VALUE]
+
+
+def count_unique_channel_lengths(dataframe: pd.DataFrame) -> int:
+    """
+    Count number of unique channel lengths values
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame
+
+    Returns
+    -------
+    int
+    """
+    return dataframe[CHANNEL_WIDTH_INDEX].nunique()
