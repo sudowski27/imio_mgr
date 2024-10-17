@@ -21,3 +21,4 @@
 - test_18.py : funkcja count_unique_drain_source_voltages
 - test_19.py : funkcja data_dimensions
 - test_20.py : funkcja validate_epochs
+- test_21.py : funkcja get_device
