@@ -1,4 +1,4 @@
-"""version 0.1.1"""
+"""version 0.1.2"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -7,7 +7,8 @@ from .const_values import (
     DEVICE_DTYPE,
     CHANNEL_WIDTH_INDEX,
     CHANNEL_WIDTH_DTYPE,
-    VOLTAGE_CURRENT_D_TYPE
+    VOLTAGE_CURRENT_D_TYPE,
+    DEVICE_MINIMUM_VALUE
 )
 
 
@@ -77,3 +78,15 @@ def is_devices_seperated(dataframe: pd.DataFrame) -> bool:
     -------
     bool
     """
+    device_count_in_column = (dataframe[DEVICE_INDEX] == DEVICE_MINIMUM_VALUE).sum()
+
+    device_index = dataframe[DEVICE_INDEX].eq(DEVICE_MINIMUM_VALUE).idxmax()
+
+    device_count_in_row = 0
+    for value in dataframe[DEVICE_INDEX][device_index:]:
+        if value == DEVICE_MINIMUM_VALUE:
+            device_count_in_row += 1
+        else:
+            break
+
+    return device_count_in_column != device_count_in_row
