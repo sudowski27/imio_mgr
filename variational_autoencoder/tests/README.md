@@ -19,3 +19,4 @@
 - test_16.py : funkcja dataframe_together
 - test_17.py : funkcja count_unique_gate_source_voltages
 - test_18.py : funkcja count_unique_drain_source_voltages
+- test_19.py : funkcja data_dimensions
