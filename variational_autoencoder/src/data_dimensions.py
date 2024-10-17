@@ -1,4 +1,4 @@
-"""version 0.1.8"""
+"""version 0.1.9"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -33,7 +33,7 @@ def load_dataframe(filename: str) -> pd.DataFrame:
         File with no content
     """
     try:
-        return pd.read_csv(filename, sep=CSV_SEPERATOR, header=None)
+        return pd.read_csv(filename, sep=CSV_SEPERATOR, header=None, engine='python')
     except pd.errors.EmptyDataError as exc:
         raise ValueError(f"Empty {filename} file") from exc
 
