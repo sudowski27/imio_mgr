@@ -1,7 +1,8 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 from dataclasses import dataclass
 import numpy as np
 import pandas as pd
+from variational_autoencoder.src.const_values import CSV_SEPERATOR
 
 
 @dataclass
@@ -45,4 +46,4 @@ def create_csv_columns_dtypes(args: CreateCsvColumnsDtypesArgs) -> None:
 
     df = pd.DataFrame(data)
 
-    df.to_csv(args.filename, index=False, header=None, sep=" ")
+    df.to_csv(args.filename, index=False, header=None, sep=CSV_SEPERATOR)
