@@ -1,6 +1,6 @@
-"""version 0.1.4"""
+"""version 0.1.5"""
 
-CSV_SEPERATOR = " "
+CSV_SEPERATOR = "\t"
 DATAFRAME_EXPECTED_COLUMNS = 5
 DEVICE_INDEX = 0
 CHANNEL_WIDTH_INDEX = 1
