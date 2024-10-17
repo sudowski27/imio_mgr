@@ -5,6 +5,7 @@
 	"synth_data_folder": "./mosfet_dc_synthetic/trained_on_50",
 	"synth_data_file_name_core": "nmos_dc_synth",
 	"batch_size": 25,
+	"epochs": 40000,
 	"learning_rate": 1e-4,
 	"wkl": 0.01,
 	"device": "cuda"
