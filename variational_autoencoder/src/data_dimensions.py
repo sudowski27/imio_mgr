@@ -1,4 +1,4 @@
-"""version 0.1.7"""
+"""version 0.1.8"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -173,3 +173,38 @@ def count_unique_drain_source_voltages(dataframe: pd.DataFrame) -> int:
     int
     """
     return dataframe[DRAIN_SOURCE_VOLTAGE_INDEX].nunique()
+
+
+def data_dimensions(filename: str) -> tuple:
+    """
+    Get dimensions of data
+
+    Parameters
+    ----------
+    filename: str
+
+    Returns
+    -------
+    tuple
+        (channel_width_dim: int, gate_source_dim: int, drain_source_dim: int)
+
+    Raises
+    ------
+    FileNotFoundError
+    ValueEroor
+        File with no content
+    ValueError
+        Csv content not valid
+    """
+    dataframe = load_dataframe(filename)
+    validate_dataframe(dataframe)
+
+    if is_devices_seperated(dataframe):
+        dataframe = connect_devices(dataframe)
+
+    first_device = get_first_device(dataframe)
+    channel_width_dim = count_unique_channel_lengths(first_device)
+    gate_source_dim = count_unique_gate_source_voltages(first_device)
+    drain_source_dim = count_unique_drain_source_voltages(first_device)
+
+    return channel_width_dim, gate_source_dim, drain_source_dim
