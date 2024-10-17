@@ -1,4 +1,4 @@
-"""version 0.1.3"""
+"""version 0.1.4"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -111,3 +111,18 @@ def connect_devices(dataframe: pd.DataFrame) -> pd.DataFrame:
     dataframe_copy.drop(columns=['original_index'], inplace=True)
 
     return dataframe_copy
+
+
+def get_first_device(dataframe: pd.DataFrame) -> pd.DataFrame:
+    """
+    Get first device from dataframe
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    return dataframe[dataframe[DEVICE_INDEX] == DEVICE_MINIMUM_VALUE]
