@@ -1,7 +1,12 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 
 import pytest
 import pandas as pd
+from variational_autoencoder.src.const_values import (
+    CPU_DEVICE,
+    CUDA_DEVICE
+)
+from variational_autoencoder.src.configuration_keys import configuration_keys
 
 
 @pytest.fixture
@@ -28,3 +33,33 @@ def one_and_two_devices_dataframe():
     dataframe_two_devices = pd.DataFrame(data_1_dataframe + data_2_dataframe)
 
     return dataframe_one_device, dataframe_two_devices
+
+
+@pytest.fixture
+def small_configure_with_device_cpu():
+    """
+    Fixture with configure dict with cpu device
+
+    Returns
+    -------
+    dict
+    """
+    configure = {
+        configuration_keys.device: CPU_DEVICE
+    }
+    return configure
+
+
+@pytest.fixture
+def small_configure_with_device_cuda():
+    """
+    Fixture with configure dict with cuda device
+
+    Returns
+    -------
+    dict
+    """
+    configure = {
+        configuration_keys.device: CUDA_DEVICE
+    }
+    return configure
