@@ -1,7 +1,8 @@
-"""version 0.1.1"""
+"""version 0.1.2"""
 import random
 from dataclasses import dataclass
 import pandas as pd
+from variational_autoencoder.src.const_values import CSV_SEPERATOR
 
 
 @dataclass
@@ -59,7 +60,7 @@ def create_csv_train_dataset_file(args: CreateCsvTrainDatasetFileArguments) -> p
             args.v_gs_dim,
             args.v_ds_dim
         )
-    dataframe.to_csv(args.filename, sep=" ", index=False, header=False)
+    dataframe.to_csv(args.filename, sep=CSV_SEPERATOR, index=False, header=False)
 
     return create_train_dataset_dataframe_device_width_together_clone(
             args.number_of_devices,
