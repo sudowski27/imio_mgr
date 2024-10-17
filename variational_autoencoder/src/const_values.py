@@ -1,4 +1,4 @@
-"""version 0.1.5"""
+"""version 0.1.6"""
 
 CSV_SEPERATOR = "\t"
 DATAFRAME_EXPECTED_COLUMNS = 5
@@ -10,3 +10,5 @@ DEVICE_DTYPE = "int64"
 CHANNEL_WIDTH_DTYPE = "int64"
 VOLTAGE_CURRENT_D_TYPE = "float64"
 DEVICE_MINIMUM_VALUE = 1
+CUDA_DEVICE = "cuda"
+CPU_DEVICE = "cpu"
