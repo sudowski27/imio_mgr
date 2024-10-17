@@ -1,4 +1,4 @@
-"""version 0.1.2"""
+"""version 0.1.3"""
 import pandas as pd
 from .const_values import (
     CSV_SEPERATOR,
@@ -90,3 +90,24 @@ def is_devices_seperated(dataframe: pd.DataFrame) -> bool:
             break
 
     return device_count_in_column != device_count_in_row
+
+
+def connect_devices(dataframe: pd.DataFrame) -> pd.DataFrame:
+    """
+    Create dataframe with connected devices
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    dataframe_copy = dataframe.copy()
+    dataframe_copy['original_index'] = dataframe_copy.index
+
+    dataframe_copy = dataframe_copy.sort_values(by=[DEVICE_INDEX, 'original_index'], ignore_index=True)
+    dataframe_copy.drop(columns=['original_index'], inplace=True)
+
+    return dataframe_copy
