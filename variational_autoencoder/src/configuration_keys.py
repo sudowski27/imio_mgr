@@ -1,4 +1,4 @@
-"""version 0.1.0"""
+"""version 0.1.1"""
 from collections import namedtuple
 
 
@@ -10,6 +10,7 @@ ConfigurationKeys = namedtuple(
      "synth_data_folder",
      "synth_data_file_name_core",
      "batch_size",
+     "epochs",
      "learning_rate",
      "wkl",
      "device"
@@ -23,6 +24,7 @@ configuration_keys = ConfigurationKeys(
     "synth_data_folder",
     "synth_data_file_name_core",
     "batch_size",
+    "epochs",
     "learning_rate",
     "wkl",
     "device"
