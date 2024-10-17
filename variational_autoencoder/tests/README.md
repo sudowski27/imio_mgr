@@ -14,3 +14,4 @@
 - test_11.py : funkcja load_dataframe
 - test_12.py : funkcja validate_dataframe
 - test_13.py : funkcja is_devices_seperated
+- test_14.py : funkcja connect_devices
