@@ -12,4 +12,4 @@
 - test_9.py  : funkcja validate_device
 - test_10.py : funkcja validate_configuration
 - test_11.py : funkcja load_dataframe
-- test_12.py : funkcja load_dataframe
+- test_12.py : funkcja validate_dataframe
