@@ -1,4 +1,4 @@
-"""version 0.1.1"""
+"""version 0.1.2"""
 
 import pytest
 import pandas as pd
@@ -61,5 +61,20 @@ def small_configure_with_device_cuda():
     """
     configure = {
         configuration_keys.device: CUDA_DEVICE
+    }
+    return configure
+
+
+@pytest.fixture
+def small_configure_with_train_dataset_file():
+    """
+    Fixture with configure dict with cuda device
+
+    Returns
+    -------
+    dict
+    """
+    configure = {
+        configuration_keys.train_dataset_file: "test_csv.csv"
     }
     return configure
